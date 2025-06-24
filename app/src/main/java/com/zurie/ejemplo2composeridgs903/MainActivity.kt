@@ -35,14 +35,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val navController = rememberNavController()
-            NavHost(navController=navController, startDestination = "inicio"){
-                composable("inicio"){PantallaInicio(navController)}
-                composable("detalle/{nombre}"){backStackEntry->
-                    val nombre=backStackEntry.arguments?.getString("nombre") ?:"Invitado"
-                    PantallaDetalle(navController,nombre)
-                }
-            }
+            CalculadoraDosNumeros()
+//            val navController = rememberNavController()
+//            NavHost(navController=navController, startDestination = "inicio"){
+//                composable("inicio"){PantallaInicio(navController)}
+//                composable("detalle/{nombre}"){backStackEntry->
+//                    val nombre=backStackEntry.arguments?.getString("nombre") ?:"Invitado"
+//                    PantallaDetalle(navController,nombre)
+//                }
+//            }
         }
     }
 }
